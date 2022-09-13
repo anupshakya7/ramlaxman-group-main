@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +17,8 @@ use App\Http\Controllers\Frontend\ServicesDetailController;
 
 Route::get('/',[HomeController::class,"index"]);
 Route::get('/details',[ServicesDetailController::class,"index"]);
+Route::get('/admin',[AdminController::class,"index"]);
+Route::post('/login',[AdminController::class,"login"]);
+
 
 
