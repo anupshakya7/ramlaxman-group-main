@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
-use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +14,12 @@ use App\Http\Controllers\AdminController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/',[HomeController::class,"index"]);
-Route::get('/details',[ServicesDetailController::class,"index"]);
-Route::get('/admin',[AdminController::class,"index"]);
-Route::post('/login',[AdminController::class,"login"]);
-
-
-
+Route::get('/', [HomeController::class, "index"]);
+Route::get('/details', [ServicesDetailController::class, "index"]);
+Route::get('/adminLogin', [AdminController::class, "index"]);
+Route::post('/admin', [AdminController::class, "login"]);
+Route::view('/adminPage', 'frontend.admin.admin');
+Route::get('/header', [AdminController::class, "header"]);
+Route::post('/header/{id}', [AdminController::class, "update_header"])->name('update_header');
