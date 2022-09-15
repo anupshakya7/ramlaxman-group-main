@@ -10,7 +10,7 @@
             </span> and
             <span class="text-warning text-decoration-underline">creatively</span> --}}
             @php
-            echo($header[0]->title)
+            echo($header->title)
             @endphp
         </h1>
         <h4 class="text-white mb-5">
@@ -18,14 +18,14 @@
             strengthen your community while advancing the world economy. --}}
             {{-- {{ $header[0]->description }} --}}
             @php
-            echo($header[0]->description)
+            echo($header->description)
             @endphp
         </h4>
 
         <div class="mx-auto mb-5" style="width: 100%; max-width: 600px; display: inline;">
 
             <button type="button" class="btn btn-light mx-auto rounded-pill py-2 px-4 video-btn" data-bs-toggle="modal"
-                data-src="{{$header[0]->url}}" data-bs-target="#myModal">
+                data-src="{{$header->url}}" data-bs-target="#myModal">
                 <i class="fa fa-film"></i>
                 Watch
                 Video
@@ -65,36 +65,41 @@
 <!-- About Start -->
 <section id="aboutUs" class="container-fluid py-5">
     <div class="container py-5">
+
         <div class="row">
             <div class="col-lg-7 mb-3">
                 <div class="section-title position-relative mb-4">
                     <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
-                    <h1 class="display-4">Great Customer Services is the Base of our Business</h1>
+                    <h1 class="display-4">
+                        @php
+                        echo($about->title)
+                        @endphp
+                    </h1>
                 </div>
                 <p>
-                    Since 18 years ago, Ramlaxman Innovations has offered automation services. With a variety of
-                    products, we serve both domestic and foreign consumers. Currently, Nepal is dealing with a
-                    number of security-related difficulties, such as theft, robbery, and plunder. We are now
-                    creating and providing Wireless Community Alarm System, Automatic Sliding Sensor Gate, Bank
-                    Security System, Access Control System, and Door Lock thanks to the creative ideas of twin young
-                    researchers Ram and Laxman. We also provide a mobile attendance system, automatic motor
-                    operator, electronic notice board, Nepali voting machine, public transportation tracking system,
-                    and other items. Additionally, we provide lifetime warranties and guarantees* as well as
-                    replacement warranties and guarantees* for all of our items. About 2 million people are our
-                    consumers. Some of our key customers are Nabil Bank, Nepal Police, United Academy, Employees
-                    Provident Fund, Himalaya TV, Citizens Bank, Naya patrika, and Mero Job.
+                    @php
+                    echo($about->description)
+                    @endphp
                 </p>
                 <div class="row pt-3 mx-0">
                     <div class="col-3 px-0">
                         <div class="bg-danger text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">25</h1>
+                            <h1 class="text-white" data-toggle="counter-up">
+                                @php
+                                echo($about->satisfied_clients)
+                                @endphp
+                            </h1>
                             <h6 class="text-uppercase text-white">Satisfied<span class="d-block">Clients</span>
                             </h6>
                         </div>
                     </div>
                     <div class="col-3 px-0">
                         <div class="bg-success text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">100</h1>
+                            <h1 class="text-white" data-toggle="counter-up">
+                                @php
+                                echo($about->successful_projects)
+                                @endphp
+                            </h1>
                             <h6 class="text-uppercase text-white">Successful<span class="d-block">Projects</span>
                             </h6>
                         </div>
@@ -102,14 +107,22 @@
                     <div class="col-3 px-0">
                         <div class="bg-warning
                              text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">20</h1>
+                            <h1 class="text-white" data-toggle="counter-up">
+                                @php
+                                echo($about->years_of_experience)
+                                @endphp
+                            </h1>
                             <h6 class="text-uppercase text-white">Years of<span class="d-block">Experience</span>
                             </h6>
                         </div>
                     </div>
                     <div class="col-3 px-0">
                         <div class="bg-primary text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">10</h1>
+                            <h1 class="text-white" data-toggle="counter-up">
+                                @php
+                                echo($about->present_experts)
+                                @endphp
+                            </h1>
                             <h6 class="text-uppercase text-white">Present<span class="d-block">Experts</span></h6>
                         </div>
                     </div>
@@ -117,8 +130,9 @@
             </div>
             <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="{{url('frontend/img/about.jpg')}}"
-                        style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100" src="@php
+                        echo($about->image)
+                    @endphp" style="object-fit: cover;">
                 </div>
             </div>
 
@@ -145,16 +159,20 @@
                     </h6>
                     <h1 class="display-4">Working Benefits of Ramlaxman</h1>
                 </div>
+                @foreach ($benefit as $working_benefit)
                 <div class="d-flex mb-3">
-                    <div class="btn-icon rounded-pill bg-success mr-4">
-                        <i class="fa fa-2x fa-heartbeat text-white"></i>
+                    <div class="{{$working_benefit->background_color}}">
+                        @php
+                        echo($working_benefit->icon)
+                        @endphp
                     </div>
                     <div class="mt-n1">
-                        <h4>Medical, Disability & Life Insurance</h4>
-                        <p>Regardless of any health issues or concerns, we offer life insurance.</p>
+                        <h4>{{$working_benefit->title}}</h4>
+                        <p>{{$working_benefit->description}}</p>
                     </div>
                 </div>
-                <div class="d-flex mb-3">
+                @endforeach
+                {{-- <div class="d-flex mb-3">
                     <div class="btn-icon rounded-pill bg-primary mr-4">
                         <i class="fa fa-2x fa-credit-card text-white"></i>
                     </div>
@@ -172,7 +190,7 @@
                         <p class="m-0">Develop your own leadership abilities so that you may better your community
                             and the world economy.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

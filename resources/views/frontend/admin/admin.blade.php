@@ -11,30 +11,81 @@
     </div>
     @endif
     <h2>Admin Page</h2>
-    <div class="main-container" style="display: flex; flex-direction:column;">
-        <a href="/header" class="header card w-25 p-4 rounded m-3">
-            Header
-        </a>
-        <a href="#" class="about card w-25 p-4 rounded m-3">
-            About Us
-        </a>
-        <a href="#" class="feature card w-25 p-4 rounded m-3">
-            Feature
-        </a>
-        <a href="#" class="team card w-25 p-4 rounded m-3">
-            Team
-        </a>
-        <a href="#" class="testimonial card w-25 p-4 rounded m-3">
-            Testimonial
-        </a>
-        <a href="#" class="services card w-25 p-4 rounded m-3">
-            Services
-        </a>
-        <a href="#" class="customer card w-25 p-4 rounded m-3">
-            Customer
-        </a>
+    <table class="table table-dark table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Section</th>
+                <th scope="col" class="">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Header</td>
+                <td>
+                    <a href="/header" class="header btn btn-primary btn-sm rounded">
+                        <i class='fas fa-edit'></i>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>About Us</td>
+                <td>
+                    <a href="/aboutUs" class="aboutUs btn btn-primary btn-sm rounded">
+                        <i class='fas fa-edit'></i>
+                        Edit
+                    </a>
+                </td>
 
-    </div>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Why Choose Us</td>
+                <td>
+                    <a href="/working_benefit" class="whyChooseUs btn btn-secondary btn-sm rounded">
+                        <i class='far fa-eye'></i>
+                        View Details
+                    </a>
+                </td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Our Team</td>
+                <td>
+                    <a href="/ourTeam" class="ourTeam btn btn-primary btn-sm rounded">
+                        <i class='fas fa-edit'></i>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Services</td>
+                <td>
+                    <a href="/aboutUs" class="aboutUs btn btn-primary btn-sm rounded">
+                        <i class='fas fa-edit'></i>
+                        Edit
+                    </a>
+                </td>
+
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Our Customer</td>
+                <td>
+                    <a href="/ourTeam" class="ourTeam btn btn-primary btn-sm rounded">
+                        <i class='fas fa-edit'></i>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 
 </div>
 

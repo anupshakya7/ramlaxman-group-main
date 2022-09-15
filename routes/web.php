@@ -23,3 +23,8 @@ Route::post('/admin', [AdminController::class, "login"]);
 Route::view('/adminPage', 'frontend.admin.admin');
 Route::get('/header', [AdminController::class, "header"]);
 Route::post('/header/{id}', [AdminController::class, "update_header"])->name('update_header');
+Route::get('/aboutUs', [AdminController::class, "aboutUs"]);
+Route::post('/aboutUs/{id}', [AdminController::class, "update_about"])->name('update_about');
+Route::get('/working_benefit', [AdminController::class, "working_benefit"]);
+Route::post('/working_benefit/store', [AdminController::class, "working_benefit_store"])->name('working_benefit_store');
+Route::get('/working_benefit/{id}', [AdminController::class, "delete_benefits"])->name('delete_benefits');
