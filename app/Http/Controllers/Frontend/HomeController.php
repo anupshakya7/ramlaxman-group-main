@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Header;
+use App\Models\OurTeam;
 use App\Models\WorkingBenefit;
 
 class HomeController extends Controller
@@ -14,7 +15,8 @@ class HomeController extends Controller
         $header = Header::first();
         $about = AboutUs::first();
         $benefit = WorkingBenefit::all();
-        return view('frontend.main.index', compact('header', 'about', 'benefit'));
+        $ourTeam = OurTeam::all();
+        return view('frontend.main.index', compact('header', 'about', 'benefit', 'ourTeam'));
     }
 
 }

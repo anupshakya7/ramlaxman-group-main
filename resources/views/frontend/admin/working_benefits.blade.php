@@ -102,8 +102,10 @@
                     @endphp
                 </td>
                 <td colspan="2">
-                    <a href="working_benefit_edit/{{$working_benefit->id}}" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalEdit" class="aboutUs btn btn-primary btn-sm rounded">
+                    {{-- data-bs-toggle="modal"
+                    data-bs-target="#exampleModalEdit" --}}
+                    <a href="{{route('update_benefit',$working_benefit->id)}}"
+                        class="editBenefits btn btn-primary btn-sm rounded">
                         <i class='fas fa-edit'></i>
                         Edit
                     </a>

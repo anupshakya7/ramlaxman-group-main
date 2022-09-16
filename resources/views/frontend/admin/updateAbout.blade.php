@@ -15,8 +15,10 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" value="{{$about->description}}" name="description" class="form-control form-control-sm"
-                placeholder="Enter Description" id="description">
+            {{-- <input type="text" value="{{$about->description}}" name="description"
+                class="form-control form-control-sm" placeholder="Enter Description" id="description"> --}}
+            <textarea class="form-control form-control-sm" name="description" placeholder="Enter Description"
+                id="description" style="height: 120px;resize:none;">{{$about->description}}</textarea>
         </div>
 
         <div class="mb-3">

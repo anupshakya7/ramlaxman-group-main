@@ -42,7 +42,7 @@
 
             </tr>
             <tr>
-                <th scope="row">2</th>
+                <th scope="row"></th>
                 <td>Why Choose Us</td>
                 <td>
                     <a href="/working_benefit" class="whyChooseUs btn btn-secondary btn-sm rounded">
@@ -58,7 +58,7 @@
                 <td>
                     <a href="/ourTeam" class="ourTeam btn btn-primary btn-sm rounded">
                         <i class='fas fa-edit'></i>
-                        Edit
+                        View Details
                     </a>
                 </td>
             </tr>

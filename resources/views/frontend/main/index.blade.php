@@ -206,62 +206,22 @@
             <h1 class="display-4">Meet Our Team</h1>
         </div>
         <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            @foreach ($ourTeam as $member)
             <div class="team-item">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-1.jpg')}}" alt="">
+                <img class="img-fluid w-100" src="{{$member->image}}" alt="">
                 <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Employee Name</h5>
-                    <p class="mb-2">Web Developer</p>
+                    <h5 class="mb-3">{{$member->emp_name}}</h5>
+                    <p class="mb-2">{{$member->role}}</p>
                     <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="mx-1 p-1" href="{{$member->twitter}}"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-1 p-1" href="{{$member->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-1 p-1" href="{{$member->linkIn}}"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="mx-1 p-1" href="{{$member->instagram}}"><i class="fab fa-instagram"></i></a>
+                        <a class="mx-1 p-1" href="{{$member->youtube}}"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-2.jpg')}}" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Employee Name</h5>
-                    <p class="mb-2">App Developer</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-3.jpg')}}" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Employee Name</h5>
-                    <p class="mb-2">AI Developer</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-4.jpg')}}" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Employee Name</h5>
-                    <p class="mb-2">Graphics Designer</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

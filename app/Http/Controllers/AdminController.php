@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Header;
+use App\Models\OurTeam;
 use App\Models\User;
 use App\Models\WorkingBenefit;
 use Illuminate\Contracts\Session\Session;
@@ -105,5 +106,53 @@ class AdminController extends Controller
         $deleteBenefit->delete();
         session()->flash('status', "Working Benefits Deleted Successfully");
         return redirect('working_benefit');
+    }
+
+    public function update_benefit($id)
+    {
+        $benefitEdit = WorkingBenefit::find($id);
+        return view('frontend.admin.updateWorkingBenefit', compact('benefitEdit'));
+    }
+
+    public function update_working_benefit($id, Request $req)
+    {
+        $benefitUpdate = WorkingBenefit::find($id);
+        $benefitUpdate->title = $req->title;
+        $benefitUpdate->description = $req->description;
+        $benefitUpdate->icon = $req->icon;
+        $benefitUpdate->background_color = $req->background_color;
+        $benefitUpdate->save();
+        $req->session()->put("status", "Working Benefits Updated Successfully");
+        return redirect('working_benefit');
+    }
+
+    public function our_team()
+    {
+        $our_team = OurTeam::all();
+        return view('frontend.admin.our_team', compact('our_team'));
+    }
+
+    public function our_team_store(Request $req)
+    {
+        $our_new_team = new OurTeam;
+        $our_new_team->image = $req->image;
+        $our_new_team->emp_name = $req->emp_name;
+        $our_new_team->role = $req->role;
+        $our_new_team->twitter = $req->twitter;
+        $our_new_team->facebook = $req->facebook;
+        $our_new_team->linkIn = $req->linkIn;
+        $our_new_team->instagram = $req->instagram;
+        $our_new_team->youtube = $req->youtube;
+        $our_new_team->save();
+        $req->session()->put('status', "Employee Added Successfully");
+        return redirect('ourTeam');
+    }
+
+    public function delete_our_team($id)
+    {
+        $member_delete = OurTeam::find($id);
+        $member_delete->delete();
+        session()->flash('status', "Employee Deleted Successfully");
+        return redirect('ourTeam');
     }
 }

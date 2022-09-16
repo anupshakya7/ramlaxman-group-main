@@ -28,3 +28,8 @@ Route::post('/aboutUs/{id}', [AdminController::class, "update_about"])->name('up
 Route::get('/working_benefit', [AdminController::class, "working_benefit"]);
 Route::post('/working_benefit/store', [AdminController::class, "working_benefit_store"])->name('working_benefit_store');
 Route::get('/working_benefit/{id}', [AdminController::class, "delete_benefits"])->name('delete_benefits');
+Route::get('/working_benefit_edit/{id}', [AdminController::class, "update_benefit"])->name('update_benefit');
+Route::post('/working_benefit_update/{id}', [AdminController::class, "update_working_benefit"])->name('update_working_benefit');
+Route::get('/ourTeam', [AdminController::class, "our_team"]);
+Route::post('/ourTeam/store', [AdminController::class, "our_team_store"])->name('our_team_store');
+Route::get('/ourTeam/{id}', [AdminController::class, "delete_our_team"])->name('delete_our_team');
