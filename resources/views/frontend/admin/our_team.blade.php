@@ -32,14 +32,13 @@
                             {{-- {{route('add_working_benefit', $header->id)}} --}}
                             @csrf
                             <div class="mb-3">
-                                @csrf
                                 <label for="image" class="form-label">Profile Image</label>
                                 <input type="text" name="image" class="form-control form-control-sm" id="image"
                                     placeholder="Enter Profile Image URL">
 
                             </div>
                             <div class="mb-3">
-                                @csrf
+
                                 <label for="emp_name" class="form-label">Employee Name</label>
                                 <input type="text" name="emp_name" class="form-control form-control-sm" id="emp_name"
                                     placeholder="Enter Employee Name">
@@ -129,7 +128,8 @@
                 <td colspan="2">
                     {{-- data-bs-toggle="modal"
                     data-bs-target="#exampleModalEdit" --}}
-                    <a href="{{route('update_benefit',$team->id)}}" class="editBenefits btn btn-primary btn-sm rounded">
+                    <a href="{{route('update_our_team',$team->id)}}"
+                        class="editBenefits btn btn-primary btn-sm rounded">
                         <i class='fas fa-edit'></i>
                         Edit
                     </a>
@@ -141,7 +141,7 @@
                             <div class="modal-content">
                                 <form action="" method="POST">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Update Working Benefits</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Update Our Member</h5>
                                         <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal"
                                             aria-label="Close">x</button>
                                     </div>
@@ -149,7 +149,12 @@
                                         {{-- {{route('add_working_benefit', $header->id)}} --}}
                                         @csrf
                                         <div class="mb-3">
-                                            @csrf
+                                            <label for="image" class="form-label">Profile Image</label>
+                                            <input type="text" name="image" class="form-control form-control-sm"
+                                                id="image" placeholder="Enter Profile Image URL">
+
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="emp_name" class="form-label">Employee Name</label>
                                             <input type="text" name="emp_name" class="form-control form-control-sm"
                                                 id="emp_name" placeholder="Enter Employee Name">

@@ -66,9 +66,9 @@
                 <th scope="row">4</th>
                 <td>Services</td>
                 <td>
-                    <a href="/aboutUs" class="aboutUs btn btn-primary btn-sm rounded">
+                    <a href="/ourService" class="aboutUs btn btn-primary btn-sm rounded">
                         <i class='fas fa-edit'></i>
-                        Edit
+                        View Details
                     </a>
                 </td>
 
@@ -77,9 +77,9 @@
                 <th scope="row">5</th>
                 <td>Our Customer</td>
                 <td>
-                    <a href="/ourTeam" class="ourTeam btn btn-primary btn-sm rounded">
+                    <a href="/ourCustomer" class="ourTeam btn btn-primary btn-sm rounded">
                         <i class='fas fa-edit'></i>
-                        Edit
+                        View Details
                     </a>
                 </td>
             </tr>

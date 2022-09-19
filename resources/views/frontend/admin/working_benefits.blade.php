@@ -166,11 +166,13 @@
                             </div>
                         </div>
                     </div>
+                    @if ($working_benefit->id != 1)
                     <a href="{{route('delete_benefits',$working_benefit->id)}}"
                         class="aboutUs btn btn-danger btn-sm rounded mt-2">
                         <i class='fas fa-trash'></i>
                         Delete
                     </a>
+                    @endif
                 </td>
             </tr>
             @endforeach

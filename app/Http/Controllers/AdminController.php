@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Header;
+use App\Models\OurCustomer;
 use App\Models\OurTeam;
 use App\Models\User;
 use App\Models\WorkingBenefit;
@@ -154,5 +155,73 @@ class AdminController extends Controller
         $member_delete->delete();
         session()->flash('status', "Employee Deleted Successfully");
         return redirect('ourTeam');
+    }
+
+    public function update_our_team($id)
+    {
+        $member_update = OurTeam::find($id);
+        return view('frontend.admin.updateOurTeam', compact('member_update'));
+    }
+
+    public function update_OurTeam($id, Request $req)
+    {
+        $memberEdit = OurTeam::find($id);
+        $memberEdit->image = $req->image;
+        $memberEdit->emp_name = $req->emp_name;
+        $memberEdit->role = $req->role;
+        $memberEdit->twitter = $req->twitter;
+        $memberEdit->facebook = $req->facebook;
+        $memberEdit->linkIn = $req->linkIn;
+        $memberEdit->instagram = $req->instagram;
+        $memberEdit->youtube = $req->youtube;
+        $memberEdit->save();
+        $req->session()->put("status", "Employee Updated Successfully");
+        return redirect('ourTeam');
+    }
+
+    public function our_customer()
+    {
+        $ourCustomer = OurCustomer::all();
+        return view('frontend.admin.ourCustomer', compact('ourCustomer'));
+    }
+
+    public function our_customer_store(Request $req)
+    {
+        $addMember = new OurCustomer;
+        $addMember->profile = $req->profile;
+        $addMember->customer_name = $req->customer_name;
+        $addMember->project_name = $req->project_name;
+        $addMember->save();
+        $req->session()->put('status', "Customer Added Successfully");
+        return redirect('ourCustomer');
+    }
+    public function delete_our_customer($id)
+    {
+        $deleteMember = OurCustomer::find($id);
+        $deleteMember->delete();
+        session()->put('status', 'Customer Delete Successfully');
+        return redirect('ourCustomer');
+    }
+
+    public function update_our_customer($id)
+    {
+        $editCustomer = OurCustomer::find($id);
+        return view('frontend.admin.updateOurCustomer', compact('editCustomer'));
+    }
+
+    public function update_OurCustomer($id, Request $req)
+    {
+        $updateCustomer = OurCustomer::find($id);
+        $updateCustomer->profile = $req->profile;
+        $updateCustomer->customer_name = $req->customer_name;
+        $updateCustomer->project_name = $req->project_name;
+        $updateCustomer->save();
+        $req->session()->put('status', "Customer Updated Successfully");
+        return redirect('ourCustomer');
+    }
+
+    public function our_service_store()
+    {
+
     }
 }

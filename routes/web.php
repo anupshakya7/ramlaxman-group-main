@@ -33,3 +33,12 @@ Route::post('/working_benefit_update/{id}', [AdminController::class, "update_wor
 Route::get('/ourTeam', [AdminController::class, "our_team"]);
 Route::post('/ourTeam/store', [AdminController::class, "our_team_store"])->name('our_team_store');
 Route::get('/ourTeam/{id}', [AdminController::class, "delete_our_team"])->name('delete_our_team');
+Route::get('/ourTeamUpdate/{id}', [AdminController::class, "update_our_team"])->name('update_our_team');
+Route::post('/ourTeamEdit/{id}', [AdminController::class, "update_OurTeam"])->name('update_OurTeam');
+Route::get('/ourCustomer', [AdminController::class, "our_customer"]);
+Route::post('/ourCustomer/store', [AdminController::class, "our_customer_store"])->name('our_customer_store');
+Route::get('/ourCustomerDelete/{id}', [AdminController::class, "delete_our_customer"])->name('delete_our_customer');
+Route::get('/ourCustomerEdit/{id}', [AdminController::class, "update_our_customer"])->name('update_our_customer');
+Route::post('/ourCustomerUpdate/{id}', [AdminController::class, "update_OurCustomer"])->name('update_OurCustomer');
+Route::get('/ourService',[AdminController::class,"our_service"]);
+Route::post('ourService/store', [AdminController::class, "our_service_store"])->name('our_service_store');

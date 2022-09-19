@@ -149,15 +149,16 @@
 
             <div class="col-lg-5" style="min-height: 500px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="{{url('frontend/img/feature.jpg')}}"
+                    <img class="position-absolute w-100 h-100" src="{{$benefit_title->icon}}"
                         style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-7 my-5 pt-5 pb-lg-5">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">
+                        {{$benefit_title->title}}
                     </h6>
-                    <h1 class="display-4">Working Benefits of Ramlaxman</h1>
+                    <h1 class="display-4">{{$benefit_title->description}}</h1>
                 </div>
                 @foreach ($benefit as $working_benefit)
                 <div class="d-flex mb-3">
@@ -294,12 +295,12 @@
             <img class="img-fluid" src="{{url('frontend/img/courses-1.jpg')}}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">GPS Vehicle Tracking System</h4>
-                <div class="border-top w-100 mt-3">
+                {{-- <div class="border-top w-100 mt-3">
                     <div class="d-flex justify-content-between p-4">
                         <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
                         <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
                     </div>
-                </div>
+                </div> --}}
                 <div class="w-100 bg-white text-center p-4">
                     <a class="btn btn-primary" href="details">Service Detail</a>
                 </div>
@@ -392,35 +393,15 @@
             <h1 class="display-4">Explore Our Customers</h1>
         </div>
         <div class="owl-carousel customer-carousel position-relative" style="padding: 0 30px;">
+            @foreach ($ourCustomer as $customer)
             <div class="customer-item card">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-1.jpg')}}" alt="">
+                <img class="img-fluid w-100" style="height: 235px !important;" src="{{$customer->profile}}" alt="">
                 <div class="bg-white text-center p-4">
-                    <h5 class="mb-3">Customer Name</h5>
-                    <p class="mb-2">Project Name</p>
+                    <h5 class="mb-3">{{$customer->customer_name}}</h5>
+                    <p class="mb-2">{{$customer->project_name}}</p>
                 </div>
             </div>
-            <div class="customer-item card">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-2.jpg')}}" alt="">
-                <div class="bg-white text-center p-4">
-                    <h5 class="mb-3">Customer Name</h5>
-                    <p class="mb-2">Project Name</p>
-                </div>
-            </div>
-            <div class="customer-item card">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-3.jpg')}}" alt="">
-                <div class="bg-white text-center p-4">
-                    <h5 class="mb-3">Customer Name</h5>
-                    <p class="mb-2">Project Name</p>
-                </div>
-            </div>
-            <div class="customer-item card ">
-                <img class="img-fluid w-100" src="{{url('frontend/img/team-4.jpg')}}" alt="">
-                <div class="bg-white text-center p-4">
-                    <h5 class="mb-3">Customer Name</h5>
-                    <p class="mb-2">Project Name</p>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </section>
